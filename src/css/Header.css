@@ -1,0 +1,66 @@
+
+:root {
+    --header-outer-height: 110px;
+    --header-inner-height: 70px;
+    --header-height-difference: calc(
+      var(--header-outer-height) - var(--header-inner-height)
+    );
+    --header-bg: #fff;
+  }
+
+.header_outer {
+    /* прилепляем её */
+    height: var(--header-outer-height);
+    position: sticky;
+    top: calc(
+      var(--header-height-difference) * -1
+    ); /* умножаем на -1, будет отрицательным */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    /* остальное */
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.2);
+    
+  }
+  
+  .header_inner {
+    
+    /* делаем его "липким" */
+    height: var(--header-inner-height);
+    position: sticky;
+    top: 0;
+    width: 100%;
+  
+    /* остальное */
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .logo{
+    margin-left: 10px;
+    position: relative;
+    width: 50px;
+  }
+  .responsive_wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+  .links{
+    margin-right: 1%;
+    padding: 5px;
+  }
+  .nav_list{
+    display: flex;
+    list-style-type: none;
+  }
+  .nav_item{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 250;
+    
+  }
+ .nav_item:nth-child(n+2){
+    margin-left:10px;
+ }
