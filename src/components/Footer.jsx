@@ -4,7 +4,7 @@ function Footer (){
     return (
         <footer className="footer_outer">
             <div className="footer_inner">
-                ghjdthrf
+                
             </div>
         </footer>
     )
