@@ -1,0 +1,27 @@
+:root{
+  --mobile-menu-color:rgba(57, 150, 167, 0.274); 
+}
+
+.links{
+  margin-left: auto;
+  padding: 30px;
+}
+@media (max-width : 576px) {
+  .links{
+    display: flex;
+    position:fixed;
+    padding: 0;
+    top: 0;
+    flex-direction: column;
+    left: -260px;
+    
+    background-color: var(--mobile-menu-color);
+    width: 250px;
+    height: 100%;
+    transition: transform 0.2s linear;
+    border-radius: 5%;
+  }
+  .links.active{
+    transform: translateX(100%);
+  }
+}

@@ -1,0 +1,41 @@
+:root{
+    --btn-color:rgb(0, 0, 0);
+}
+.mbutton{
+    display:none;
+}
+
+
+@media (max-width : 576px) {
+    .mbutton{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        right: 30px;
+        margin-left: auto;
+        padding: 0;
+        border: 0;
+        width: 28px;
+        height: 24px;
+        
+        background-color: transparent;
+        box-shadow: none;
+        cursor: pointer;
+        
+
+    }
+
+    .spnitem{
+        display: block;
+        background-color: var(--btn-color);
+        left: 0;
+        position: relative;
+        width: 28px;
+        height: 4px;
+        color: yellowgreen;
+        border-radius: 3px;
+
+    }
+
+}

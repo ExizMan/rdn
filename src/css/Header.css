@@ -5,7 +5,8 @@
     --header-height-difference: calc(
       var(--header-outer-height) - var(--header-inner-height)
     );
-    --header-bg: #fff;
+    --header-bg: rgb(5, 247, 255);
+    --header-bgg: linear-gradient(90deg, #b9deed, #efefef);
   }
 
 .header_outer {
@@ -18,9 +19,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
+    
     /* остальное */
-    background-color: var(--header-bg);
+    background: var(--header-bgg);
     box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.2);
     
   }
@@ -32,7 +33,7 @@
     position: sticky;
     top: 0;
     width: 100%;
-  
+   
     /* остальное */
     display: flex;
     align-items: center;
@@ -45,8 +46,7 @@
     width: 50px;
   }
   .responsive_wrapper{
-    display: flex;
-    justify-content: space-between;
+
   }
   .links{
     margin-right: 1%;

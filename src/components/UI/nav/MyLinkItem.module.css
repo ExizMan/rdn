@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+.nav_item{
+   
+    font-family:'Montserrat', sans-seri;
+    font-weight: 500;
+    
+  }
+ .nav_item:nth-child(n+2){
+    margin-left:10px;
+ }
+ @media (max-width : 576px){
+   .nav_item{
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0;
+      
+   }
+   .nav_item:nth-child(n+2){
+      margin-left:0;
+ }
+}

@@ -1,0 +1,16 @@
+.nav_list{
+    display: flex;
+    list-style-type: none;
+  }
+  @media (max-width : 576px){
+    .nav_list{
+      
+     
+      flex-direction: column;
+      flex:1;
+      margin-top: 2rem;
+      padding-top: 40px;
+      padding-left: 60px;
+
+    }
+  }
