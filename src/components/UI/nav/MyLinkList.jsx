@@ -4,13 +4,13 @@ import MyLinkItem from './MyLinkItem'
 function MyLinkList() {
     const [links,setLinks]=useState(
         [
-            {id:1,tittle:'Меню'},{id:2,tittle:'Нейросеть'},{id:3,tittle:'Поддержка'},{id:4,tittle:'Профиль'}
+            {id:1,tittle:'Меню',rf:'/'},{id:2,tittle:'Нейросеть',rf:'neuro'},{id:3,tittle:'Поддержка',rf:'help'},{id:4,tittle:'Профиль',rf:'profile'}
         ]
     )
   return (
     <ul className={classes.nav_list}>
         {links.map(link=> 
-            <MyLinkItem tittle={link.tittle} key={link.id}/>)}
+            <MyLinkItem tittle={link.tittle} key={link.id} rf={link.rf}/>)}
     </ul>
   )
 }

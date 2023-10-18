@@ -1,0 +1,16 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+a.ssilka:active, /* активная/посещенная ссылка */
+a.ssilka:hover,  /* при наведении */
+a.ssilka {
+  text-decoration: none;
+  color: #666;
+}
+.articles{
+    display: flex;
+    min-height: 100vh;
+}
