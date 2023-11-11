@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
-
+import JoinLogin from './UI/notlogin/JoinLogin';
 function ProfileComp(){
-    //const [count,setCount]=useState(0)
-
+    const [isLogin,setLogin]=useState(false)
+    console.log(isLogin)
+    if (isLogin===false)
         return(
+            
         
-            <div className="articles">
-                e
-            </div>
+            <article className="articles profilenonlog">
+                
+                <JoinLogin />
+                
+                
+            </article>
         
+            )
+    else
+        return(
+            <article className="articles">
+                
+                
+                
+                
+            </article>
             )
 }
 export default ProfileComp;
