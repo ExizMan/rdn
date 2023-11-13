@@ -5,11 +5,25 @@
 .linktologin{
     color: blue;
 }
+.linktologin:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+.linktologin:active{
+    text-decoration: none;
+    color: forestgreen;
+}
 .unauth{
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-family: Raleway;
+    font-weight: 400;
     
+}
+.plslog{
+    font-size: 16px;
 }
 .loginform{
     position: fixed;
@@ -45,6 +59,7 @@
 }
 .loginform.active{
     pointer-events: all;
+    
 
     opacity: 1;
     transition: opacity 0.3s ease-in;
