@@ -1,6 +1,4 @@
-.notlogimage{
-    display: none;
-}
+
 .plslog{
     font-size: small;
 }
@@ -20,26 +18,35 @@
     right: 0;
     left: 0;
 
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     opacity: 0;
-    
+    pointer-events: none;
+    transition: opacity 0.3s ease-in;
     
 }
 .logincontent{
     padding: 40px;
     background: white;
     min-width: 250px;
-    background: linear-gradient(aqua, 1%, rgb(196, 191, 191));
+    background: whitesmoke;
+    transition: all 0.5s;
+    transform: scale(0);
+    border-radius: 10%;
+    border: 10px solid gray;
+}
+
+.logincontent.active{
     
+    transform: scale(1);
 }
 .loginform.active{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    pointer-events: all;
+
     opacity: 1;
-    transition: opacity 1s ease-in;
+    transition: opacity 0.3s ease-in;
     
 }

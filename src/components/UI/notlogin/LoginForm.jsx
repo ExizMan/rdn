@@ -2,14 +2,16 @@ import React from 'react'
 import classes from './JoinLogin.module.css'
 
 function LoginForm({children,visible,setVisible}) {
-    const arrClasses = [classes.loginform];
+    const arrDispleyClasses = [classes.loginform];
+    const arrModalClasses = [classes.logincontent];
     if (visible){
-        arrClasses.push(classes.active);
+        arrDispleyClasses.push(classes.active);
+        arrModalClasses.push(classes.active);
         
     }
     return (
-    <div className={arrClasses.join(' ')} onClick={()=>setVisible(false)}>
-        <div className={classes.logincontent} onClick={(e)=>e.stopPropagation()}> {children} </div>
+    <div className={arrDispleyClasses.join(' ')} onClick={()=>setVisible(false)}>
+        <div className={arrModalClasses.join(' ')} onClick={(e)=>e.stopPropagation()}> {children} </div>
     </div>
   )
 }
