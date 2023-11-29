@@ -1,7 +1,7 @@
 import axios from "axios";
 
-let access_token = localStorage.getItem('token')
-let refresh_token = localStorage.getItem('refresh_token')
+let accessToken = localStorage.getItem('token')
+let refreshToken = localStorage.getItem('refresh_token')
 
 const perm_axios = axios.create({
     baseURL:baseURL,
@@ -12,4 +12,4 @@ const perm_axios = axios.create({
 
 
 
-export default 
+export default perm_axios
