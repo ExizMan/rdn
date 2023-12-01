@@ -15,11 +15,12 @@ import Body from './components/Body'
 import Footer from './components/Footer'
 import ProfileComp from './components/ProfileComp'
 import axios from 'axios'
+import perm_axios from './components/api/tokens'
 
 function App() {
   
   async function fetchData(){
-    const response = await axios.get('http://localhost:8000/')
+    const response = await perm_axios.get('somewhat/')
     console.log(response.data)
   }
   return (

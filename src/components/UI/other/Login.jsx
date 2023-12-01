@@ -2,6 +2,9 @@ import React from "react";
 import cl from "./Login.module.css";
 import { useForm } from "react-hook-form";
 import axios, { Axios } from "axios";
+import { jwtDecode } from "jwt-decode";
+import perm_axios from "../../api/tokens";
+
 function Login() {
   const {
     register,
@@ -17,12 +20,13 @@ function Login() {
     });
 
     if (res.status === 200) {
-      localStorage.setItem("token", JSON.stringify(res.data.access_token));
-      localStorage.setItem('refresh_token', JSON.stringify(res.data.refresh_token));
+      localStorage.setItem("token", res.data.access_token);
+      localStorage.setItem("refresh_token", res.data.refresh_token);
       localStorage.setItem("user", JSON.stringify(res.data.username));
+      console.log(jwtDecode(res.data.access_token));
 
+      console.log(res);
     }
-    console.log(res);
   };
 
   return (
