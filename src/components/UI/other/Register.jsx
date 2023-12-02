@@ -1,11 +1,11 @@
 import React from "react";
-import cl from "./Login.module.css";
+import cl from "./Register.module.css";
 import { useForm } from "react-hook-form";
 import axios, { Axios } from "axios";
 import { jwtDecode } from "jwt-decode";
 import perm_axios from "../../api/tokens";
 
-function Login({ setShow, ...props }) {
+function Register({ setShow, ...props }) {
   const {
     register,
     formState: { errors, isValid },
@@ -26,16 +26,14 @@ function Login({ setShow, ...props }) {
       console.log(jwtDecode(res.data.access_token));
 
       console.log(res);
-      setShow(false);
     }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={cl.login}>
       <div className={cl.headerlogin}>
-        <span className={cl.title}> Вход</span>
+        <span className={cl.title}> Регистрация</span>
       </div>
-
       <div className={cl.username_error}>
         {errors?.username && <p>{errors?.username?.message || "Error!"}</p>}
       </div>
@@ -55,7 +53,6 @@ function Login({ setShow, ...props }) {
         autoComplete="username"
         placeholder="Имя пользователя"
       />
-
       <input
         {...register("password", {
           required: "Требуется пароль",
@@ -71,7 +68,6 @@ function Login({ setShow, ...props }) {
         type="password"
         placeholder="Пароль"
       />
-
       <div className="password-error">
         {errors?.password && <p>{errors?.password?.message || "Error!"}</p>}
       </div>
@@ -80,4 +76,4 @@ function Login({ setShow, ...props }) {
   );
 }
 
-export default Login;
+export default Register;

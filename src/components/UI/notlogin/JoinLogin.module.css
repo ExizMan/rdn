@@ -52,22 +52,38 @@
     transform: scale(0);
     border-radius: 10%;
     border: 10px solid gray;
-
+    position: absolute;
+    top: 20%;
     display: flex;
     flex: 0;
 
-
+    
+    
 }
 
 .logincontent.active{
     
     transform: scale(1);
+    animation-name: grad_anim;
+    animation-duration: 1500ms;
 }
 .loginform.active{
     pointer-events: all;
-    overflow-y: hidden;
-
+    
     opacity: 1;
     transition: opacity 0.3s ease-in;
+    
+}
+@keyframes grad_anim {
+    0% {
+        border-color: white;
+    }
+    75% {
+        border-color: aqua;
+    }
+    100% {
+        border-color:gray
+
+    }
     
 }
