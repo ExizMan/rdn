@@ -20,7 +20,7 @@ import perm_axios from './components/api/tokens'
 function App() {
   
   async function fetchData(){
-    const response = await perm_axios.get('somewhat/')
+    const response = await perm_axios.get('auth/somewhat/')
     console.log(response.data)
   }
   return (

@@ -11,7 +11,7 @@ function LoginForm({ children, visible, setVisible }) {
   return (
     <div
       className={arrDispleyClasses.join(" ")}
-      onClick={() => setVisible(false)}
+      onClick={() => setVisible(!visible)}
     >
       <div
         className={arrModalClasses.join(" ")}

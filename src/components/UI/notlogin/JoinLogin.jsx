@@ -3,10 +3,12 @@ import classes from "./JoinLogin.module.css";
 import LoginForm from "./LoginForm";
 import Login from "../other/Login";
 import Register from "../other/Register";
+import Otp from "../other/Otp";
 
 function JoinLogin() {
   const [showForm, setShow] = useState(false);
   const [showRegister, setRegister] = useState(false);
+  const [showOtp, setOtp] = useState(false);
   const showLoginForm = (e) => {
     setShow(!showForm);
     console.log(showForm);
@@ -35,7 +37,10 @@ function JoinLogin() {
         <Login setShow={setShow} />
       </LoginForm>
       <LoginForm visible={showRegister} setVisible={setRegister}>
-        <Register setShow={setRegister} />
+        <Register setShow={setRegister} setOtp={setOtp} />
+      </LoginForm>
+      <LoginForm visible={showOtp}>
+        <Otp setShow={setOtp} setOtp={setOtp} />
       </LoginForm>
     </div>
   );
