@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 
 let accessToken = localStorage.getItem("token");
 let refreshToken = localStorage.getItem("refresh_token");
-const baseURL = "http://localhost:8000/api/v1/auth";
+const baseURL = "http://localhost:8000/api/v1";
 
 const perm_axios = axios.create({
   baseURL: baseURL,

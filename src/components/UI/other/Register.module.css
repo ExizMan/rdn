@@ -1,9 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&display=swap');
+div > *
+.loginpouter{
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  flex: 1;
+  flex-basis: 1;
+  position: relative;
+
+}
+
 .login{
     display: flex;
     flex-direction: column;
+    
     align-items: center;
     flex: 1;
+    box-sizing: border-box;
+    width: 100%;
+
 
     
     
@@ -67,12 +83,36 @@ button{
   .username{
     position: relative;
   }
-  .block{
+  .otp{
+    opacity: 0;
+    background-color: whitesmoke;
+    border-radius: 10%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:0;
     
-    
-
+    justify-content: start;
+    align-items: center;
+    width: 120%;
+    height: 110%;
+    transition: opacity 0.5s;
+    pointer-events: none;
     
   }
+  .otp > p{
+    margin-top: 0.5vh;
+  }
+  .otp > p:last-of-type{
+    margin-top: 0vh;
+    margin-bottom: 5vh;
+    
+  }
+  .otp.active{
+    opacity: 1;
+    pointer-events: all;
+  }
+  
   
   
 

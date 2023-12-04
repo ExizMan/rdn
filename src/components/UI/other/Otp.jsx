@@ -5,15 +5,13 @@ import classes from "./Register.module.css";
 const Otp = ({ ...props }) => {
   const [otp, setOtp] = useState("");
   return (
-    <div className={classes.block}>
-      <OTPInput
-        value={otp}
-        onChange={setOtp}
-        numInputs={4}
-        renderSeparator={<span>-</span>}
-        renderInput={(props) => <input {...props} />}
-      />
-    </div>
+    <OTPInput
+      value={otp}
+      onChange={setOtp}
+      numInputs={4}
+      renderSeparator={<span>-</span>}
+      renderInput={(props) => <input {...props} />}
+    />
   );
 };
 

@@ -1,0 +1,27 @@
+import React from "react";
+import classes from "./JoinLogin.module.css";
+
+function OTPForm({ children, visible, setVisible }) {
+  const arrDispleyClasses = [classes.loginform];
+  const arrModalClasses = [classes.logincontent];
+  if (visible) {
+    arrDispleyClasses.push(classes.active);
+    arrModalClasses.push(classes.active);
+  }
+  return (
+    <div
+      className={arrDispleyClasses.join(" ")}
+      onClick={() => setVisible(!visible)}
+    >
+      <div
+        className={arrModalClasses.join(" ")}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {" "}
+        {children}{" "}
+      </div>
+    </div>
+  );
+}
+
+export default LoginForm;

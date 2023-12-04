@@ -39,9 +39,6 @@ function JoinLogin() {
       <LoginForm visible={showRegister} setVisible={setRegister}>
         <Register setShow={setRegister} setOtp={setOtp} />
       </LoginForm>
-      <LoginForm visible={showOtp}>
-        <Otp setShow={setOtp} setOtp={setOtp} />
-      </LoginForm>
     </div>
   );
 }
