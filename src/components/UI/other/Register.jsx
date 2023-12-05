@@ -6,9 +6,51 @@ import Otp from "./Otp";
 import OTPInput from "react-otp-input";
 function Register({ setShow, ...props }) {
   const [serverErr, setServError] = useState({});
+  const [serverData, setServData] = useState({
+    email: "1",
+    username: "1",
+    password: "9",
+    password2: "3",
+  });
   const [showOtpForm, setOtpForm] = useState(false);
   const [otp, setOtp] = useState("");
-  const registerUser = async () => {};
+
+  const createUser = async (data) => {
+    try {
+      let res = await axios.post(
+        "http://localhost:8000/api/v1/auth/register/create",
+        {
+          email: data.email,
+          username: data.username,
+          password: data.password,
+          password2: data.password2,
+        },
+      );
+      console.log(res);
+      if (res.status === 201) {
+        console.log("succes");
+        setShow(false);
+      }
+    } catch (e) {}
+  };
+
+  const sendOtp = async () => {
+    try {
+      let res = await axios.post(
+        "http://localhost:8000/api/v1/auth/register/confirm",
+        {
+          email: serverData.email,
+          otp: otp,
+        },
+      );
+      console.log(res);
+      if (res.status === 200) {
+        createUser(serverData);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const {
     register,
@@ -21,6 +63,12 @@ function Register({ setShow, ...props }) {
 
   const onSubmit = async (data) => {
     try {
+      setServData({
+        email: data.email,
+        username: data.username,
+        password: data.password,
+        password2: data.password2,
+      });
       let res = await axios.post(
         "http://localhost:8000/api/v1/auth/register/",
         {
@@ -33,17 +81,11 @@ function Register({ setShow, ...props }) {
       console.log(res);
       if (res.status === 200) {
         console.log(res);
-        setServError({
-          email: data.email,
-          username: data.username,
-          password: data.password,
-          password2: data.password2,
-        });
+
         console.log(serverErr);
 
+        console.log(serverData);
         setOtpForm(true);
-
-        setOtpForm(false);
       }
     } catch (e) {
       if (e.response?.status === 400) setServError(e.response.data);
@@ -136,10 +178,11 @@ function Register({ setShow, ...props }) {
         </div>
         <button type="submit"> войти</button>
       </form>
-      <form
+      {/* <form
         className={showOtpForm ? `${cl.otp} + ${cl.active}` : cl.otp}
-        onSubmit={registerUser}
-      >
+        onSubmit={someFun}
+      > */}
+      <div className={showOtpForm ? `${cl.otp} + ${cl.active}` : cl.otp}>
         <p>Вам на почту пришел код</p>
         <p>Введите его, пожалуйста :3</p>
         <OTPInput
@@ -149,7 +192,10 @@ function Register({ setShow, ...props }) {
           renderSeparator={<span>-</span>}
           renderInput={(props) => <input {...props} />}
         />
-      </form>
+        <button onClick={sendOtp}></button>
+
+        {/* </form> */}
+      </div>
     </div>
   );
 }
