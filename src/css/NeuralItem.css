@@ -1,0 +1,14 @@
+.neuropageitem{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(228, 220, 207, 0.4) ;
+    justify-content: space-around;
+    align-items:center;
+    height: 100%;
+    overflow: hidden;
+}
+.neuralinputs{
+    display: flex;
+    
+}

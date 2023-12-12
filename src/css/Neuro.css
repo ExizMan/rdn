@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;800&display=swap');
+*{
+    font-family: 'Raleway', sans-serif;
+}
+.neuropage{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(228, 220, 207, 0.4) ;
+    justify-content: center;
+    align-items:center;
+    height: 100%;
+    overflow: hidden;
+}
+.contentneuro{
+    background-color: whitesmoke;
+    width: 85%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items:center;
+   
+}
+.contentneuro:nth-child(1){
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+}
+.neurosect{
+    width: 100%;
+    padding-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

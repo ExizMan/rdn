@@ -31,6 +31,7 @@
     /* делаем его "липким" */
     height: var(--header-inner-height);
     position: sticky;
+    z-index: 20;
     top: 0;
     width: 100%;
    

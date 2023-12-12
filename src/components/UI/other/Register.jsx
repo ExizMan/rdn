@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import Otp from "./Otp";
 import OTPInput from "react-otp-input";
+import { Button } from "@mui/material";
 function Register({ setShow, ...props }) {
   const [serverErr, setServError] = useState({});
   const [serverData, setServData] = useState({
@@ -176,7 +177,7 @@ function Register({ setShow, ...props }) {
         <div className="password-error">
           {errors?.password && <p>{errors?.password?.message || "Error!"}</p>}
         </div>
-        <button type="submit"> войти</button>
+        <Button type="submit"> войти</Button>
       </form>
       {/* <form
         className={showOtpForm ? `${cl.otp} + ${cl.active}` : cl.otp}
@@ -192,7 +193,7 @@ function Register({ setShow, ...props }) {
           renderSeparator={<span>-</span>}
           renderInput={(props) => <input {...props} />}
         />
-        <button onClick={sendOtp}></button>
+        <Button onClick={sendOtp}></Button>
 
         {/* </form> */}
       </div>

@@ -10,9 +10,6 @@ const baseURL = "http://localhost:8000/api/v1";
 const perm_axios = axios.create({
   baseURL: baseURL,
   "Content-type": "application/json",
-  // headers: {
-  //   Authorization: localStorage.getItem("token") ? `Bearer ${accessToken}` : "",
-  // },
 });
 
 perm_axios.interceptors.request.use(
@@ -39,7 +36,7 @@ perm_axios.interceptors.response.use(
       try {
         refreshToken = localStorage.getItem("refresh_token");
         console.log(refreshToken);
-        const response = await axios.post(`${baseURL}/token/refresh/`, {
+        const response = await axios.post(`${baseURL}/auth/token/refresh/`, {
           refresh: refreshToken,
         });
         accessToken = response.data.access;

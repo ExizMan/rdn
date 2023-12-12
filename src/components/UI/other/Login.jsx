@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios, { Axios } from "axios";
 import { jwtDecode } from "jwt-decode";
 import perm_axios from "../../api/tokens";
+import { Button } from "@mui/material";
 
 function Login({ setShow, ...props }) {
   const {
@@ -75,7 +76,10 @@ function Login({ setShow, ...props }) {
       <div className="password-error">
         {errors?.password && <p>{errors?.password?.message || "Error!"}</p>}
       </div>
-      <button type="submit"> войти</button>
+
+      <Button variant="text" type="submit">
+        Войти
+      </Button>
     </form>
   );
 }

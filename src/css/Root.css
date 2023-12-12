@@ -3,17 +3,14 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    
+    background-color: rgb(233, 239, 243) ;
+        
 }
 a.ssilka:active, /* активная/посещенная ссылка */
 a.ssilka:hover,  /* при наведении */
 a.ssilka {
   text-decoration: none;
   color: #666;
-}
-.articles{
-    
-    min-height: 100vh;
 }
 
 
